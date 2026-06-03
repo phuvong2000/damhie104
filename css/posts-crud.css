@@ -1,0 +1,190 @@
+/* ── POST CARD FOOTER & ACTIONS ── */
+.post-card {
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.post-card.is-editing {
+    border: 2px solid #2d7a3a;
+    box-shadow: 0 0 0 3px rgba(45, 122, 58, 0.12);
+}
+
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    gap: 8px;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+}
+
+.post-actions {
+    display: flex;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity 0.18s;
+}
+
+.post-card:hover .post-actions {
+    opacity: 1;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    background: transparent;
+}
+
+.edit-btn {
+    color: #2d7a3a;
+    border-color: #2d7a3a33;
+}
+
+.edit-btn:hover {
+    background: #2d7a3a12;
+    border-color: #2d7a3a66;
+}
+
+.delete-btn {
+    color: #c0392b;
+    border-color: #c0392b33;
+}
+
+.delete-btn:hover {
+    background: #c0392b12;
+    border-color: #c0392b66;
+}
+
+/* ── PUBLISH BUTTON EDITING STATE ── */
+#publish-btn.editing {
+    background: #2563eb !important;
+}
+
+#publish-btn.editing:hover {
+    background: #1d4ed8 !important;
+}
+
+/* ── CANCEL EDIT BUTTON ── */
+#cancel-edit-btn {
+    display: none;
+    color: #888;
+}
+
+/* ── POST COUNT BADGE ── */
+.posts-section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.posts-section-header h3 {
+    margin: 0;
+}
+
+.post-count-badge {
+    background: #2d7a3a;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    min-width: 22px;
+    text-align: center;
+}
+
+/* ── DELETE CONFIRM MODAL ── */
+#delete-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.22s;
+}
+
+#delete-modal-overlay.show {
+    opacity: 1;
+}
+
+.delete-modal {
+    background: #fff;
+    border-radius: 14px;
+    padding: 32px 28px 24px;
+    max-width: 360px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    transform: translateY(12px) scale(0.97);
+    transition: transform 0.22s;
+}
+
+#delete-modal-overlay.show .delete-modal {
+    transform: translateY(0) scale(1);
+}
+
+.delete-modal-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.delete-modal h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.delete-modal p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.delete-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-danger {
+    background: #c0392b !important;
+    border-color: #c0392b !important;
+    color: #fff !important;
+}
+
+.btn-danger:hover {
+    background: #a93226 !important;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .delete-modal {
+        background: #1e1e2e;
+        color: #f0f0f0;
+    }
+    .delete-modal h4 { color: #f0f0f0; }
+    .delete-modal p { color: #aaa; }
+}

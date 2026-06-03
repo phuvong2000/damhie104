@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Jost", sans-serif;
+    font-family: "Be Vietnam Pro", sans-serif;
 }
 
 #header {
@@ -15,10 +15,13 @@ body {
     position: fixed;
     top: 0;
     z-index: 99;
+    display: flex;
+    justify-content: center;
     background: white;
 
     .navbar {
         width: 1150px;
+        width: 100%;
     }
 
     .navbar-brand {
@@ -928,4 +931,24 @@ body {
             color: #696969;
         }
     }
+}
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: .85rem;
 }

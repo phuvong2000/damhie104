@@ -1,0 +1,233 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Be Vietnam Pro', sans-serif; }
+ 
+/* ══════════════════════════════
+   PAGE BANNER
+══════════════════════════════ */
+#page-banner {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+              url('../../img/banner1.jpg') center/cover no-repeat;
+  padding: 80px 0 50px;
+  text-align: center;
+  color: #fff;
+}
+ 
+#page-banner h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+ 
+.breadcrumb-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+ 
+.breadcrumb-wrap a {
+  color: #28a745;
+  text-decoration: none;
+}
+ 
+.breadcrumb-wrap span {
+  color: #fff;
+}
+ 
+.breadcrumb-wrap .arrow {
+  color: #fff;
+  font-size: 12px;
+}
+ 
+/* ══════════════════════════════
+   SERVICES LIST
+══════════════════════════════ */
+#services-list {
+  padding: 80px 0;
+  background: #fff;
+}
+ 
+/* ── Service Row (alternating layout) ── */
+.svc-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 70px;
+}
+ 
+.svc-row:last-child {
+  margin-bottom: 0;
+}
+ 
+/* Reversed: text left, image right */
+.svc-row.reverse {
+  flex-direction: row-reverse;
+}
+ 
+/* ── Image column ── */
+.svc-img {
+  flex: 0 0 480px;
+  max-width: 480px;
+}
+ 
+.svc-img img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+ 
+/* ── Text column ── */
+.svc-body {
+  flex: 1;
+}
+ 
+/* Number badge */
+.svc-num {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+ 
+/* Heading */
+.svc-body h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+ 
+/* Description */
+.svc-body p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+ 
+/* Read More link */
+.svc-body a.read-more {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+ 
+.svc-body a.read-more i {
+  margin-left: 6px;
+  font-size: 13px;
+  transition: transform 0.2s;
+}
+ 
+.svc-body a.read-more:hover {
+  color: #28a745;
+}
+ 
+.svc-body a.read-more:hover i {
+  transform: translateX(4px);
+}
+ 
+/* ── Dark mode ── */
+body.dark #services-list {
+  background: #121212;
+}
+ 
+body.dark .svc-body h3 {
+  color: #e0e0e0;
+}
+ 
+body.dark .svc-body p {
+  color: #aaa;
+}
+ 
+body.dark .svc-body a.read-more {
+  color: #e0e0e0;
+}
+ 
+body.dark .svc-body a.read-more:hover {
+  color: #28a745;
+}
+ 
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .svc-img {
+    flex: 0 0 380px;
+    max-width: 380px;
+  }
+ 
+  .svc-row {
+    gap: 40px;
+  }
+}
+ 
+@media (max-width: 768px) {
+  #page-banner h2 {
+    font-size: 2rem;
+  }
+ 
+  #services-list {
+    padding: 60px 0;
+  }
+ 
+  .svc-row,
+  .svc-row.reverse {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+ 
+  .svc-img {
+    flex: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+ 
+  .svc-img img {
+    height: 260px;
+  }
+ 
+  .svc-body h3 {
+    font-size: 1.6rem;
+  }
+}
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .85rem;
+  color: var(--muted);
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: .85rem;
+}
+ 
+@media (max-width: 480px) {
+  .svc-img img {
+    height: 210px;
+  }
+ 
+  .svc-body h3 {
+    font-size: 1.4rem;
+  }
+}
