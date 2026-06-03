@@ -374,6 +374,25 @@
         if (display)  display.textContent = user.charAt(0).toUpperCase() + user.slice(1);
       }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+        const user = localStorage.getItem('currentUser');
+        const navLogin  = document.getElementById('nav-login');
+        const avatar    = document.getElementById('user-avatar');
+        const display   = document.getElementById('user-name-display');
+        const userBadge = document.querySelector('.user-badge');
+        const btnLogout = document.getElementById('btn-logout');
+
+        if (user) {
+            if (navLogin)  navLogin.style.display  = 'none';
+            if (btnLogout) btnLogout.style.display = 'inline-block';
+            if (avatar)    avatar.textContent  = user.charAt(0).toUpperCase();
+            if (display)   display.textContent = user.charAt(0).toUpperCase() + user.slice(1);
+        } else {
+            // Chưa đăng nhập → ẩn avatar/tên
+            if (userBadge) userBadge.style.display = 'none';
+            if (btnLogout) btnLogout.style.display = 'none';
+        }
+    });
   </script>
 
 
