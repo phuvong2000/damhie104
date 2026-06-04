@@ -952,3 +952,122 @@ body {
   font-weight: 700;
   font-size: .85rem;
 }
+/* ── RESPONSIVE NAVBAR ── */
+@media (max-width: 991px) {
+    #header {
+        height: auto;
+        min-height: 70px;
+    }
+
+    #header .navbar {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+    }
+
+    #header .navbar-brand {
+        font-size: 26px;
+    }
+
+    /* Hamburger button */
+    .navbar-toggler {
+        border: none;
+        background: rgba(24, 154, 70, 0.08);
+        border-radius: 8px;
+        padding: 6px 10px;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23189a46' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* Menu đổ xuống */
+    #header .navbar-collapse {
+        width: 100%;
+        background: #fff;
+        border-top: 1px solid #f0f0f0;
+        padding: 12px 0;
+        margin-top: 8px;
+    }
+
+    #header .navbar-nav {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    #header .nav-item {
+        width: 100%;
+    }
+
+    #header .nav-link {
+        padding: 10px 16px !important;
+        font-size: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    #header .nav-link::before {
+        display: none;
+    }
+
+    #header .dropdown-menu {
+        position: static !important;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        background: #f9f9f9;
+    }
+
+    #header .dropdown-item {
+        padding: 10px 32px;
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    #header .form-inline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    /* User badge + logout + search + toggle theme */
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        border-top: 1px solid #f0f0f0;
+        width: 100%;
+    }
+
+    #header .modal-search,
+    #header .toggle-theme {
+        margin: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #header .navbar-brand {
+        font-size: 22px;
+    }
+
+    #header .nav-link {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 991px) {
+    .navbar-collapse.collapsing,
+    .navbar-collapse.show {
+        display: block !important;
+    }
+}
+@media (min-width: 992px) {
+    #header .navbar-collapse {
+        display: flex !important;
+        justify-content: flex-end;
+    }
+}
